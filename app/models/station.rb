@@ -3,5 +3,5 @@ class Station < ApplicationRecord
   has_many :station_schedules
   has_many :bikes
 
-  validates name :name, :address, :latitude, :longitude, :bike_capacity, :category, :description, presence: true
+  # validates :name, :latitude, :longitude, :bike_capacity, :category, :description, presence: true
 end

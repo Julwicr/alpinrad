@@ -18,7 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_134012) do
   # Note that some types may not work with other database engines. Be careful if changing database.
   create_enum "category", ["dropoff", "pickup", "popup"]
   create_enum "size", ["S", "M", "L", "XL"]
-  create_enum "state", ["new", "good", "need_repair", "urgent_repair"]
+  create_enum "state", ["excellent", "good", "need_repair", "urgent_repair"]
+  create_enum "status", ["ok", "cancel", "pending"]
 
   create_table "bike_selections", force: :cascade do |t|
     t.bigint "booking_id", null: false
@@ -44,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_134012) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "station_id", null: false
+    t.enum "status", default: "pending", null: false, enum_type: "status"
     t.integer "total_price"
     t.date "date"
     t.datetime "created_at", null: false
