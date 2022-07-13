@@ -1,0 +1,16 @@
+
+ // Variables
+ @import "config/fonts";
+ @import "config/colors";
+
+ body {
+   margin: 0;
+   font-family: $main-font;
+ }
+
+ // Pages layouts
+@import "pages/home";
+@import "pages/karte";
+
+ // Components
+ @import "components/navbar";

@@ -1,0 +1,68 @@
+<h1>Map</h1>
+
+<div id="map"></div>
+   <script>
+
+    // set the coordinates for the center of the map
+    const mapcenter = [47.7, 11.5];
+    // set the zoom on the map, higher number = higher zoom
+    const zoom = 12;
+    const map = L.map('map').setView([mapcenter[0], mapcenter[1]], zoom);
+
+    const tiles = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // each {} contains a marker, to add one : add a , after the last {} then go to the next line and create a new one with lat lon and text as below
+    const markers = [
+
+      // {text: 'Bhf Fischbachau',
+      //  lon: 47.705869,
+      //  lat: 11.933774},
+
+      // {text: 'Bhf Gmund (Tegernsee)',
+      //  lon: 47.749597,
+      //  lat: 11.734603},
+
+      {text: 'Bhf Lenggries',
+       lon: 47.679590,
+       lat: 11.573928},
+
+      {text: 'Bhf Kochel <br> von 18.07.22 <br> bis 31.07.22',
+       lon: 47.660331,
+       lat: 11.370752},
+
+      // {text: 'Bhf Klais',
+      //  lon: 47.482959,
+      //  lat: 11.237969},
+
+      // {text: 'Bhf Eschenlohe',
+      //  lon: 47.602233,
+      //  lat: 11.188538},
+
+      // {text: 'Bhf Lermoos',
+      //  lon: 47.405286,
+      //  lat: 10.878783},
+
+      // {text: 'Vorderriss',
+      //  lon: 47.559344,
+      //  lat: 11.436177}
+    ];
+
+    const alpinRadIcon = L.icon({
+      iconUrl: 'https://res.cloudinary.com/julwicr/image/upload/v1655480037/production/pin_c6jotw.svg',
+      shadowUrl: 'https://res.cloudinary.com/julwicr/image/upload/v1655533244/production/pin_shadow_hdaqsz.svg',
+
+      iconSize: [38, 95], // size of the icon
+      shadowSize:   [64, 64], // size of the shadow
+      iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+      shadowAnchor: [35, 78],  // the same for the shadow
+      popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    })
+
+    markers.forEach(marker => {
+      const mark = L.marker([marker.lon, marker.lat], {icon: alpinRadIcon}).addTo(map);
+      mark.bindPopup(marker.text).openPopup();
+    });
+   </script>

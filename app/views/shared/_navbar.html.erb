@@ -1,0 +1,16 @@
+<div class="navbar">
+  <%= link_to root_path, class: "navbar-logo" do %>
+    <img src="/assets/logo_rect_white.png" alt="Alpinrad's logo"/>
+  <% end %>
+
+<div class="navigation">
+  <%= link_to "Home", root_path, class: "navigation-link" %>
+  <%= link_to "Pop-up Tour", karte_path, class: "navigation-link" %>
+  <% if user_signed_in? %>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "navigation-link" %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path, class: "navigation-link" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "navigation-link" %>
+</div>
+  <% end %>
+</div>
