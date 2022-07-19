@@ -1,58 +1,90 @@
-# p 'create user aa@bb.com qwertz12 ...'
+p 'create user aa@bb.com qwertz12 ...'
 
-# User.create!(email: 'aa@bb.com', password: 'qwertz12', role: 2)
-# User.create!(email: 'test@bb.com', password: 'qwertz12', role: 0)
+User.create!(email: 'aa@bb.com', password: 'qwertz12', role: 2)
+User.create!(email: 'test@bb.com', password: 'qwertz12', role: 0)
 
-# p 'create stations'
+p 'create stations'
 
-# Station.create!(
-#   name: 'Bhf Fischbachau',
-#   longitude: 47.705869,
-#   latitude: 11.933774
-# )
-# Station.create!(
-#   name: 'Bhf Gmund (Tegernsee)',
-#   longitude: 47.749597,
-#   latitude: 11.734603
-# )
-# Station.create!(
-#   name: 'Bhf Lenggries',
-#   longitude: 47.679590,
-#   latitude: 11.573928
-# )
-# Station.create!(
-#   name: 'Bhf Kochel',
-#   longitude: 47.660331,
-#   latitude: 11.370752
-# )
-# Station.create!(
-#   name: 'Bhf Klais',
-#   longitude: 47.482959,
-#   latitude: 11.237969,
-# )
-# Station.create!(
-#   name: 'Bhf Eschenlohe',
-#   longitude: 47.602233,
-#   latitude: 11.188538
-# )
-# Station.create!(
-#   name: 'Bhf Lermoos',
-#   longitude: 47.405286,
-#   latitude: 10.878783
-# )
-# Station.create!(
-#   name: 'Vorderriss',
-#   longitude: 47.559344,
-#   latitude: 11.436177
-# )
+Station.create!(
+  name: 'Bhf Fischbachau',
+  longitude: 47.705869,
+  latitude: 11.933774,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Bhf Gmund (Tegernsee)',
+  longitude: 47.749597,
+  latitude: 11.734603,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Bhf Lenggries',
+  longitude: 47.679590,
+  latitude: 11.573928,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Bhf Kochel',
+  longitude: 47.660331,
+  latitude: 11.370752,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Bhf Klais',
+  longitude: 47.482959,
+  latitude: 11.237969,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Bhf Eschenlohe',
+  longitude: 47.602233,
+  latitude: 11.188538,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Bhf Lermoos',
+  longitude: 47.405286,
+  latitude: 10.878783,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
+Station.create!(
+  name: 'Vorderriss',
+  longitude: 47.559344,
+  latitude: 11.436177,
+  address: 'address',
+  category: 'popup',
+  bike_capacity: 20,
+  description: 'A nice description'
+)
 
-# p 'create station schedules for Kochel'
+p 'create station schedules for Kochel'
 
-# StationSchedule.create!(
-#   station: Station.where(name: 'Bhf Kochel').first,
-#   start_date: Date.new(2022, 7, 1),
-#   end_date: Date.new(2022, 8, 25)
-# )
+StationSchedule.create!(
+  station: Station.where(name: 'Bhf Kochel').first,
+  start_date: Date.new(2022, 7, 1),
+  end_date: Date.new(2022, 8, 25)
+)
 
 # p 'create bikes'
 

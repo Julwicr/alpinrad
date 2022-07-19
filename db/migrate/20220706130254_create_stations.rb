@@ -5,7 +5,7 @@ class CreateStations < ActiveRecord::Migration[7.0]
     create_table :stations do |t|
       t.string :name
       t.string :address
-      t.enum :category, enum_type: 'category'
+      t.integer :category
       t.text :description
       t.decimal :latitude
       t.decimal :longitude

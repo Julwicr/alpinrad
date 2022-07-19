@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_134012) do
   create_table "stations", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.enum "category", enum_type: "category"
+    t.integer "category"
     t.text "description"
     t.decimal "latitude"
     t.decimal "longitude"
