@@ -1,6 +1,7 @@
 # p 'create user aa@bb.com qwertz12 ...'
 
-# User.create!(email: 'aa@bb.com', password: 'qwertz12')
+# User.create!(email: 'aa@bb.com', password: 'qwertz12', role: 2)
+# User.create!(email: 'test@bb.com', password: 'qwertz12', role: 0)
 
 # p 'create stations'
 
@@ -53,22 +54,22 @@
 #   end_date: Date.new(2022, 8, 25)
 # )
 
-p 'create bikes'
+# p 'create bikes'
 
-bike_categories = %w[mountain trekking eBike MTB]
-size = %w[S M L XL]
-state = %w[excellent good need_repair urgent_repair]
-price_per_day = [15, 30]
+# bike_categories = %w[mountain trekking eBike MTB]
+# size = %w[S M L XL]
+# state = %w[excellent good need_repair urgent_repair]
+# price_per_day = [15, 30]
 
-25.times do
-  Bike.create!(
-    category: 'mountain',
-    weight: rand(30..50),
-    size: size.sample,
-    state: state.sample,
-    price_per_day: price_per_day.sample
-  )
-end
+# 25.times do
+#   Bike.create!(
+#     category: 'mountain',
+#     weight: rand(30..50),
+#     size: size.sample,
+#     state: state.sample,
+#     price_per_day: price_per_day.sample
+#   )
+# end
 
 # p 'create bookings'
 
