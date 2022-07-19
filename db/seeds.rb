@@ -1,6 +1,7 @@
 # p 'create user aa@bb.com qwertz12 ...'
 
-User.create!(email: 'aa@bb.com', password: 'qwertz12', role: 2)
+# User.create!(email: 'aa@bb.com', password: 'qwertz12', role: 2)
+# User.create!(email: 'test@bb.com', password: 'qwertz12', role: 0)
 
 # p 'create stations'
 
