@@ -12,10 +12,4 @@
   <br>
 <% end %>
 
-<%= form_with model: @station do |form| %>
-  <%= form.text_field :name %>
-  <%= form.select :category, %w[dropoff pickup popup] %>
-  <%= form.text_area :description, size: "60x10" %>
-  <%= form.number_field :bike_capacity %>
-  <%= form.submit %>
-<% end %>
+<%= link_to 'Add station', new_station_path %>

@@ -1,21 +1,19 @@
 class StationsController < ApplicationController
   def index
     redirect_to root_path if current_user.role == 'user'
-
     @stations = Station.all
-    @station = Station.new
   end
 
   def new
+    @station = Station.new
   end
 
   def create
-
     @station = Station.new(station_params)
     if @station.save
       redirect_to stations_path
     else
-      render 'stations', status: :unprocessable_entity
+      render "stations/new", status: :unprocessable_entity
     end
   end
 
