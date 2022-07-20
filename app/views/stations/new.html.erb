@@ -1,9 +1,11 @@
+<%= link_to 'Back to stations', stations_path %>
+
 <%= simple_form_for @station do |form| %>
   <%= form.input :name %>
   <%= form.input :category, as: :radio_buttons, collection: Station::ALLOWABLE_CATEGORY %>
   <%= form.input :description %>
-  <%= form.input :latitude %>
-  <%= form.input :longitude %>
+  <%= form.input :latitude, as: :hidden %>
+  <%= form.input :longitude, as: :hidden %>
   <%= form.input :bike_capacity %>
   <%= form.submit %>
 <% end %>
