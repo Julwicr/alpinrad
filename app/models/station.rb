@@ -1,5 +1,6 @@
 class Station < ApplicationRecord
-  enum category: %i[dropoff pickup popup]
+  ALLOWABLE_CATEGORY = %i[dropoff pickup popup]
+  enum category: ALLOWABLE_CATEGORY
   has_many :station_schedules
   has_many :bikes
 
