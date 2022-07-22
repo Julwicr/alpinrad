@@ -2,3 +2,14 @@
   width: 800px;
   height: 400px;
 }
+.stations-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.station {
+  width: 150px;
+  height: 150px;
+  background-color: aqua;
+}

@@ -1,15 +1,24 @@
 <h1>Stations#index</h1>
 
-<% @stations.each do |station| %>
-  <%= station.name %>
-  <%= station.category %>
-  <% unless station.station_schedules.empty? %>
-      <% station.station_schedules.each do |schedule| %>
-        <%= schedule.start_date %>
-        <%= schedule.end_date %>
+<div class="stations-container">
+  <% @stations.each do |station| %>
+    <div class="station">
+      <%= station.name %>
+      <%= station.category %>
+      <% unless station.station_schedules.empty? %>
+          <% station.station_schedules.each do |schedule| %>
+            <%= schedule.start_date %>
+            <%= schedule.end_date %>
+          <% end %>
       <% end %>
+
+      <%= simple_form_for [station, @station_schedule] do |form| %>
+        <%= form.input :start_date, as: :date, html5: true %>
+        <%= form.input :end_date, as: :date, html5: true %>
+        <%= form.submit %>
+      <% end %>
+    </div>
   <% end %>
-  <br>
-<% end %>
+</div>
 
 <%= link_to 'Add station', new_station_path %>
