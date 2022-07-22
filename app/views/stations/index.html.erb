@@ -9,6 +9,7 @@
           <% station.station_schedules.each do |schedule| %>
             <%= schedule.start_date %>
             <%= schedule.end_date %>
+            <%= button_to "delete", "/stations/#{station.id}/station_schedules/#{schedule.id}", method: :delete %>
           <% end %>
       <% end %>
 
