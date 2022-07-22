@@ -6,10 +6,6 @@ class StationSchedulesController < ApplicationController
     redirect_to stations_path
   end
 
-  def update
-
-  end
-
   def destroy
     @station_schedule = StationSchedule.find(params[:id].to_i)
     @station_schedule.destroy
