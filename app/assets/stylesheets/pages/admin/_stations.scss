@@ -9,7 +9,20 @@
 }
 
 .station {
-  width: 150px;
-  height: 150px;
-  background-color: aqua;
+  width: 300px;
+  padding: 25px;
+  margin: 25px;
+  background-color: rgb(173, 173, 233);
+
+  &-schedules {
+    &-date {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+
+// new station form within station
+.new_station_schedule {
+ margin: 10px;
 }
