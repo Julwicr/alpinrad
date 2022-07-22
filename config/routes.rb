@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "karte", to: "pages#karte"
   get "admin", to: "admin#dashboard"
-  resources :stations, except: :show
+  resources :stations, except: :show do
+    resources :station_schedules, only: %i[destroy create]
+  end
 end

@@ -2,6 +2,7 @@ class StationsController < ApplicationController
   def index
     redirect_to root_path if current_user.role == 'user'
     @stations = Station.all
+    @station_schedule = StationSchedule.new
   end
 
   def new

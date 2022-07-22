@@ -2,3 +2,27 @@
   width: 800px;
   height: 400px;
 }
+.stations-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.station {
+  width: 300px;
+  padding: 25px;
+  margin: 25px;
+  background-color: rgb(173, 173, 233);
+
+  &-schedules {
+    &-date {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+
+// new station form within station
+.new_station_schedule {
+ margin: 10px;
+}
