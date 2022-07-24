@@ -27,6 +27,13 @@ class StationsController < ApplicationController
   def destroy
   end
 
+  def toggle_shown
+    @station = Station.find(params[:id])
+    @station.shown ? @station.shown = false : @station.shown = true
+    @station.save
+    redirect_to stations_path
+  end
+
   private
 
   def station_params

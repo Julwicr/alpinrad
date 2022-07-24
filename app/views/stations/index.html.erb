@@ -9,6 +9,12 @@
         </h3>
         Type : <%= station.category %>
       </div>
+
+      <div class="station-shown">
+        <p>Currently: <%= station.shown ? "Shown" : "Hidden" %></p>
+        <%= link_to "Toggle station", toggle_shown_path(station) %>
+      </div>
+
       <% unless station.station_schedules.empty? %>
         <div class="station-schedules">
           <h4>Station schedules :</h4>
