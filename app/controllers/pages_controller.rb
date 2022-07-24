@@ -9,8 +9,8 @@ class PagesController < ApplicationController
     @markers = @stations.map do |station|
       {
         name: station.name,
-        latitude: station.latitude,
-        longitude: station.longitude
+        latitude: station.latitude.to_f,
+        longitude: station.longitude.to_f
       }
     end
   end
