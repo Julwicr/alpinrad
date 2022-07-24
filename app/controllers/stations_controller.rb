@@ -1,7 +1,7 @@
 class StationsController < ApplicationController
   def index
     redirect_to root_path if current_user.role == 'user'
-    @stations = Station.all
+    @stations = Station.all.order(:name)
     @station_schedule = StationSchedule.new
   end
 

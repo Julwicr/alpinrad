@@ -8,6 +8,13 @@
   <% @stations.each do |station| %>
     <div class="karte-station">
       <%= station.name %>
+      <% unless station.station_schedules.empty? %>
+        <div class="karte-station-schedules">
+          <% station.station_schedules.each do |schedule| %>
+            Station available from <%= schedule.start_date.strftime("%d %m %y") %> to <%= schedule.end_date.strftime("%d %m %y") %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
