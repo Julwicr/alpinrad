@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_134012) do
     t.decimal "latitude"
     t.decimal "longitude"
     t.integer "bike_capacity"
+    t.boolean "shown", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
