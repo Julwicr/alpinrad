@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def karte
-    @stations = Station.all
+    @stations = Station.where(shown: true)
     @markers = @stations.map do |station|
       {
         name: station.name,
