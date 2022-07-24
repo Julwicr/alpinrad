@@ -4,3 +4,16 @@
   margin: 0px auto;
   padding: 0;
 }
+
+.karte-stations-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.karte-station {
+  padding: 25px;
+  margin: 20px;
+  background-color: rgb(173, 173, 233);
+}
