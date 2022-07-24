@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :stations, except: :show do
     resources :station_schedules, only: %i[destroy create]
   end
+  get "station/:id/toggle_shown", to: "stations#toggle_shown", as: "toggle_shown"
 end

@@ -9,20 +9,28 @@
         </h3>
         Type : <%= station.category %>
       </div>
+
+      <div class="station-shown">
+        <p>Currently: <%= station.shown ? "Shown" : "Hidden" %></p>
+        <%= link_to "Toggle station", toggle_shown_path(station) %>
+      </div>
+
+      <h4>Station schedules :</h4>
       <% unless station.station_schedules.empty? %>
         <div class="station-schedules">
-          <h4>Station schedules :</h4>
             <% station.station_schedules.each do |schedule| %>
           <p class="station-schedules-date">
              Starting <%= schedule.start_date.strftime("%d %m %y") %> until <%= schedule.end_date.strftime("%d %m %y") %>
           </p>
-              <%= button_to "x", "/stations/#{station.id}/station_schedules/#{schedule.id}", method: :delete, class: "station-schedules-date-delete" %>
+              <%= button_to "Delete schedule", "/stations/#{station.id}/station_schedules/#{schedule.id}", method: :delete, class: "station-schedules-date-delete" %>
             <% end %>
         </div>
+      <% else %>
+        <p>Nothing scheduled.</p>
       <% end %>
 
       <%= simple_form_for [station, @station_schedule] do |form| %>
-        <%= form.input :start_date, as: :date, html5: true %>
+        <%= form.input :start_date, as: :date, html5: true, format: "dd-mm-yyyy" %>
         <%= form.input :end_date, as: :date, html5: true %>
         <%= form.submit %>
       <% end %>

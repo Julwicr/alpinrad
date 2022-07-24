@@ -1,7 +1,7 @@
 class StationsController < ApplicationController
   def index
     redirect_to root_path if current_user.role == 'user'
-    @stations = Station.all
+    @stations = Station.all.order(:name)
     @station_schedule = StationSchedule.new
   end
 
@@ -25,6 +25,13 @@ class StationsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def toggle_shown
+    @station = Station.find(params[:id])
+    @station.shown ? @station.shown = false : @station.shown = true
+    @station.save
+    redirect_to stations_path
   end
 
   private
