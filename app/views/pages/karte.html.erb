@@ -1,6 +1,8 @@
 <h1>Map</h1>
 
-<div id="map"></div>
+<div id="map"
+     data-controller="karte"
+     data-map-markers-value="<%= @markers.to_json %>"></div>
    <script>
 
     // set the coordinates for the center of the map

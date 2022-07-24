@@ -5,5 +5,13 @@ class PagesController < ApplicationController
   end
 
   def karte
+    @stations = Station.all
+    @markers = @stations.map do |station|
+      {
+        name: station.name,
+        latitude: station.latitude,
+        longitude: station.longitude
+      }
+    end
   end
 end
