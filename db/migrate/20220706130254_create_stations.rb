@@ -10,6 +10,7 @@ class CreateStations < ActiveRecord::Migration[7.0]
       t.decimal :latitude
       t.decimal :longitude
       t.integer :bike_capacity
+      t.boolean :shown, null: false, default: false
 
       t.timestamps
     end
