@@ -29,7 +29,7 @@ export default class extends Controller {
     })
     this.markersValue.forEach((marker) => {
       const mark = L.marker([marker.longitude, marker.latitude], {icon: alpinRadIcon}).addTo(map);
-      mark.bindPopup(marker.name).openPopup();
+      mark.bindPopup(marker.name, marker.schedules).openPopup();
     })
   }
 }

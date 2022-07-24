@@ -3,3 +3,11 @@
 <div id="map"
      data-controller="karte"
      data-karte-markers-value="<%= @markers.to_json %>"></div>
+
+<div class="karte-stations-container">
+  <% @stations.each do |station| %>
+    <div class="karte-station">
+      <%= station.name %>
+    </div>
+  <% end %>
+</div>

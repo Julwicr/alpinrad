@@ -10,7 +10,8 @@ class PagesController < ApplicationController
       {
         name: station.name,
         latitude: station.latitude.to_f,
-        longitude: station.longitude.to_f
+        longitude: station.longitude.to_f,
+        schedules: station.station_schedules
       }
     end
   end
