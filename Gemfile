@@ -76,3 +76,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Adding rspec for testing
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0.rc1'
+end
