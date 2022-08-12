@@ -6,6 +6,7 @@
 <div class="navigation">
   <%= link_to "Home", root_path, class: "navigation-link" %>
   <%= link_to "Pop-up Tour", karte_path, class: "navigation-link" %>
+  <%= link_to "Booking", new_booking_path, class: "navigation-link" %>
   <% if user_signed_in? %>
   <% if current_user.role == 'admin' %>
     <%= link_to "Admin dashboard", admin_path, class: "navigation-link" %>
