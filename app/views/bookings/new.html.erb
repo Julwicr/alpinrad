@@ -1,0 +1,10 @@
+BOOKINGS
+<%= simple_form_for @booking do |form| %>
+  <%= form.input :name %>
+  <%= form.input :category, as: :radio_buttons, collection: Station::ALLOWABLE_CATEGORY %>
+  <%= form.input :description %>
+  <%= form.input :latitude, as: :hidden %>
+  <%= form.input :longitude, as: :hidden %>
+  <%= form.input :bike_capacity %>
+  <%= form.submit %>
+<% end %>
